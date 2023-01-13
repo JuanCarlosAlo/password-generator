@@ -1,44 +1,63 @@
-const form = document.getElementById('password-generator-options');
-const generateButton = document.getElementById('button-generate');
+const form = document.getElementById("password-generator-options");
+const generateButton = document.getElementById("button-generate");
 const characterLength = document.getElementById(
-  'password-generator-length-number'
+  "password-generator-length-number"
 );
-const lengthValue = document.getElementById('password-generator-range');
-const passwordGenerated = document.getElementById('password-generated');
+const lengthValue = document.getElementById("password-generator-range");
+const passwordGenerated = document.getElementById("password-generated");
+const strengthValue = document.getElementById("strength-value");
 
-const upperElement = document.getElementById('uppercase');
-const lowerElement = document.getElementById('lowercase');
-const numberElement = document.getElementById('numbers');
-const symbolElement = document.getElementById('symbols');
+const upperElement = document.getElementById("uppercase");
+const lowerElement = document.getElementById("lowercase");
+const numberElement = document.getElementById("numbers");
+const symbolElement = document.getElementById("symbols");
 
-const alphabet = 'abcdefghijklmnñopqrstuvwxyz';
-const alphabetUpperCase = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
-const numbers = '0123456789';
+const alphabet = "abcdefghijklmnñopqrstuvwxyz";
+const alphabetUpperCase = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+const numbers = "0123456789";
 const symbols = '!"#$%&()*+,-./:<=>?@[]^`{}|';
+const passwordStrengthMessages = ["TOO WEAK!", "WEAK", "MEDIUM", "STRENGTH"];
 
-let allCharactersAllowed = '';
+let allCharactersAllowed = "";
 
-allCharactersAllowed = passwordGenerated.value;
+const checkInputsChecked = () => document.querySelectorAll("input:checked");
 
-const generateStrign = lenght => {
-  let newString = '';
+const generateStrign = (length) => {
+  let newString = "";
+
+  for (let index = 1; index < length; index++) {
+    newString += allCharactersAllowed.charAt(
+      Math.floor(Math.random() * allCharactersAllowed.length)
+    );
+  }
+  passwordGenerated.value = newString;
   console.log(newString);
-  for (let index = 0; index < allCharactersAllowed.length; index++) {
-    newString = allCharactersAllowed.charAt(Math.random(index));
+};
+
+const setStrengthValue = (optionsChecked) => {
+  if (lengthValue.value < 5) {
+    strengthValue.textContent = "TOO SHORT";
+  } else if (
+    !upperElement.checked &&
+    !lowerElement.checked &&
+    !numberElement.checked &&
+    !symbolElement.checked
+  ) {
+    strengthValue.textContent = "NO OPTIONS CHECKED";
+  } else {
+    strengthValue.textContent =
+      passwordStrengthMessages[optionsChecked.length - 1];
   }
 };
 
-generateButton.addEventListener('click', () => {
-  generateStrign();
-});
-
-form.addEventListener('change', e => {
+form.addEventListener("change", (e) => {
   const containsUpper = upperElement.checked;
   const containslower = lowerElement.checked;
   const containsnumber = numberElement.checked;
   const containssymbol = symbolElement.checked;
   let = characterLength.textContent = lengthValue.value;
-  let password = '';
+  const optionsChecked = checkInputsChecked();
+  let password = "";
 
   if (containsUpper) {
     password += alphabetUpperCase;
@@ -53,5 +72,18 @@ form.addEventListener('change', e => {
     password += symbols;
   }
   allCharactersAllowed = password;
-  console.log(allCharactersAllowed);
+
+  if (lengthValue.value > 5 && optionsChecked.length > 0) {
+    generateButton.removeAttribute("disabled");
+  } else {
+    generateButton.setAttribute("disabled", "");
+  }
+
+  generateStrign(characterLength.textContent);
+
+  setStrengthValue(optionsChecked);
+});
+
+form.addEventListener("submit", () => {
+  e.preventDefault();
 });
