@@ -16,7 +16,7 @@ const alphabet = "abcdefghijklmnñopqrstuvwxyz";
 const alphabetUpperCase = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
 const numbers = "0123456789";
 const symbols = '!"#$%&()*+,-./:<=>?@[]^`{}|';
-const passwordStrengthMessages = ["TOO WEAK!", "WEAK", "MEDIUM", "STRENGTH"];
+const passwordStrengthMessages = ["TOO WEAK!", "WEAK", "MEDIUM", "STRONG"];
 
 let allCharactersAllowed = "";
 
