@@ -1,6 +1,6 @@
 # Password Generator
 
-![Imagen del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/loopstudios/main/docs/assets/loop-desktop.jpeg)
+![Imagen del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/password-generator/main/docs/assets/images/readme.png)
 
 ## Ejemplo en vivo
 
@@ -8,11 +8,11 @@
 
 ## Descripción
 
-Loopstudios es una empresa que ofrece un amplio abanico de productos y servicios con una experiencia inmersiva gracias a la realidad virual.
+Password generator es una aplicacion realizada en javascript que genera contraseñas aleatorias dependiendo de los inputs marcados y es capaz de verificar la seguridad de la contraseña.
 
 ## ¿Qué he aprendido en este proyecto?
 
-En este proyecto tuve la exeriencia de hacer una galeria responsive con hover. Ademas de seguir practicando con sass y javascript.
+Este proyecto es el primer proyecto de javascript en el que se usan variables , inputs y condicionales para filtrar y validar la contraseña generada aleatoriamente mediante el objeto math.random() dependiendo de las opciones marcadas.
 
 ## Tecnologías
 
@@ -28,15 +28,15 @@ Si quieres echar un vistazo al proyecto, te recomiendo:
 
 ## Ordenador
 
-![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/loopstudios/main/docs/assets/images/read-me-img-1.jpg)
+![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/password-generator/main/docs/assets/images/readme.png)
 
 ## Estados activos
 
-![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/loopstudios/main/docs/assets/images/read-me-img-2.jpg)
+![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/password-generator/main/docs/assets/images/readme2.png)
 
-## Movil
+## Codigo
 
-![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/loopstudios/main/docs/assets/images/read-me-img-3.jpg)
+![Captura del proyecto](https://raw.githubusercontent.com/JuanCarlosAlo/password-generator/main/docs/assets/images/readme3.png)
 
 ## Autor
 
